@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+#wrapper{
+    width: 100vw;
+    height: 100dvh; 
+    background-image: url('assets/gradient-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 16px 0 70px 0;
+}
+.backgroundButton{
+    position: absolute;
+    bottom: 16px;
+}
+#changeBackground{
+    padding: 8px 48px;
+    font-size: 16px;
+    background-color: #ffffff15;
+    border-radius: 16px;
+    color: #ffffff;
+    border: #ffffff25 solid;
+    border-width: 1px;
+    backdrop-filter: blur(7px);
+    text-align: center;
+    cursor: pointer;
+}
+#status{
+    padding: 8px 48px;
+    font-size: 16px;
+    background-color: #ffffff15;
+    border-radius: 16px;
+    color: #ffffff;
+    border: #ffffff25 solid;
+    border-width: 1px;
+    backdrop-filter: blur(7px);
+    text-align: center;
+}
+.game{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 32px;
+    width: 320px;
+    height: 320px;
+    background-color: #ffffff15;
+    border-radius: 16px;
+    border: #ffffff solid 1px;
+    backdrop-filter: blur(7px);
+}
+.cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #ffffff;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 1px solid white;
+    font-size: 3rem;
+    cursor: pointer;
+    pointer-events: all;
+}
+#cell-1, #cell-4, #cell-7{
+    border-left: none;
+}
+#cell-3, #cell-6, #cell-9{
+    border-right: none;
+}
+#cell-1, #cell-2, #cell-3{
+    border-top: none;
+}
+#cell-7, #cell-8, #cell-9{
+    border-bottom: none;
+}
+#newGame{
+    padding: 8px 32px;
+    background-color: #ffffff15;
+    color: #ffffff;
+    font-size: 13px;
+    border: 1px solid white;
+    border-radius: 16px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+}
+.winner{
+    background-color: #46721D95;
+}
+.loser{
+    background-color: #FF000055;
+}
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+  }
