@@ -1,0 +1,31 @@
+{
+    "short_name": "Tic Tac Toe",
+    "name": "Tic - Tac - Toe",
+    "icons": [
+      {
+        "src": "/Web/favicon96x96.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      }
+    ],
+    "id": "/?source=pwa",
+    "start_url": "/?source=pwa",
+    "background_color": "#28282B",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#28282B",
+    "shortcuts": [
+      {
+        "name": "Play game",
+        "short_name": "Game",
+        "description": "Play Tic Tac Toe",
+        "url": "/today?source=pwa",
+        "icons": [{ "src": "/Web/favicon96x96.png", "sizes": "96x96" }]
+      }
+    ],
+    "navigationColor": "#28282B",
+    "navigationColorDark": "#28282B",
+    "navigationDividerColor": "#28282B",
+    "navigationDividerColorDark": "#28282B",
+    "description": "Play Game"
+  }
