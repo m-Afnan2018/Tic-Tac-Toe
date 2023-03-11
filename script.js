@@ -2,10 +2,13 @@ let temp;
 
 let API_KEY='l1djoFSAX4H4O3z0n_W-TDZU3os4RdG82CDBEA8aAeU';
 let URL='https://api.unsplash.com/photos/random?query=dark&';
+let heart_url = 'assets/heart-';
+let imageURL='assets/gradient-bg.jpg';
 
 const gameStatus = document.querySelector('#status');
 const BG = document.querySelector('#wrapper');
 const changeBG = document.querySelector('#changeBackground');
+const like = document.querySelector('#likeButton');
 const game   = document.querySelector('.game');
 const cell   = document.querySelectorAll('.cell');
 const cell_1 = document.querySelector('#cell-1');
@@ -27,8 +30,9 @@ let curr='X';
 cell.forEach((element, index)=>{
     element.addEventListener('click', ()=>{clicked(index, element)})
 })
-
 newGame.addEventListener('click', clear);
+changeBG.addEventListener('click', changeBackground)
+like.addEventListener('click', addToFavourite);
 
 function clicked(index, cell){
     if(currGame[index]===''){
@@ -104,12 +108,34 @@ function disableGame(){
     }
 }
 
-changeBG.addEventListener('click', changeBackground)
 
 async function changeBackground(){
     let imageJson=await fetch(`${URL}client_id=${API_KEY}`);
-    let imageURL=await imageJson.json();
+    imageURL=await imageJson.json();
     imageURL=imageURL?.urls?.regular;
     BG.removeAttribute('style');
+    like.setAttribute('src', `${heart_url}stroke.png`);
     BG.setAttribute('style', `background-image: url('${imageURL}');`);
+}
+
+function addToFavourite(){
+    if(localStorage.getItem('image_url')==imageURL){
+        like.setAttribute('src', `${heart_url}stroke.png`);
+        localStorage.clear();
+    }
+    else{
+        like.setAttribute('src', `${heart_url}fill.png`);
+        localStorage.setItem('image_url', imageURL);
+    }
+}
+
+init();
+
+function init(){
+    if(localStorage.getItem('image_url')){
+        BG.removeAttribute('style');
+        imageURL=localStorage.getItem('image_url');
+        BG.setAttribute('style', `background-image: url("${imageURL}");`);
+        like.setAttribute('src', `${heart_url}fill.png`);
+    }
 }

@@ -20,6 +20,29 @@
 .backgroundButton{
     position: absolute;
     bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.likeContainer{
+    padding: 6px;
+    background-color: #ffffff15;
+    border-radius: 100%;
+    color: #ffffff;
+    border: #ffffff25 solid;
+    border-width: 1px;
+    backdrop-filter: blur(7px);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+#likeButton{
+    width: 26px;
+    aspect-ratio: 1 / 1;
 }
 #changeBackground{
     padding: 8px 48px;
