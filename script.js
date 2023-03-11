@@ -9,6 +9,7 @@ const gameStatus = document.querySelector('#status');
 const BG = document.querySelector('#wrapper');
 const changeBG = document.querySelector('#changeBackground');
 const like = document.querySelector('#likeButton');
+const likeCont = document.querySelector('.likeContainer');
 const game   = document.querySelector('.game');
 const cell   = document.querySelectorAll('.cell');
 const cell_1 = document.querySelector('#cell-1');
@@ -32,7 +33,7 @@ cell.forEach((element, index)=>{
 })
 newGame.addEventListener('click', clear);
 changeBG.addEventListener('click', changeBackground)
-like.addEventListener('click', addToFavourite);
+likeCont    .addEventListener('click', addToFavourite);
 
 function clicked(index, cell){
     if(currGame[index]===''){
